@@ -15,7 +15,7 @@ public class Profile {
 
 //    private Long id;
     private String name;
-    private List<Resource> resources;
+    private Resource resource;
 
     public Profile() {
     }
@@ -23,7 +23,6 @@ public class Profile {
 //    public Profile(Long id) {
 //        this.id = id;
 //    }
-
     public Profile(String name) {
         this.name = name;
     }
@@ -31,11 +30,9 @@ public class Profile {
 //    public Long getId() {
 //        return id;
 //    }
-
 //    public void setId(Long id) {
 //        this.id = id;
 //    }
-
     public String getName() {
         return name;
     }
@@ -43,6 +40,16 @@ public class Profile {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
+    
+    
 
     @Override
     public String toString() {

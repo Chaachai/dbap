@@ -6,6 +6,7 @@
 package service;
 
 import bean.Profile;
+import bean.Resource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import java.util.logging.Logger;
 public class ProfileFacade {
     
     Config c = new Config();
+    ResourceFacade rf = new ResourceFacade();
     
     public List<Profile> getAllProfiles() {
         try {
@@ -27,11 +29,10 @@ public class ProfileFacade {
             ResultSet rs = c.loadData("SYSTEM","SYSTEM" ,"select distinct profile from dba_profiles");
 
             while (rs.next()) {
+                Resource resource = rf.getRecourcesByProfile(rs.getString(1));
                 Profile profile = new Profile();
-//                Salarie sal = salarieFacade.getSalarieById(rs.getLong(3));
-//                profile.setId(rs.getString(1));
                 profile.setName(rs.getString(1));
-//                dp.setResponsable(sal);
+                profile.setResource(resource);
                 list.add(profile);
             }
             return list;
