@@ -1,179 +1,312 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="517.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.ProfilesController">
+<AnchorPane id="AnchorPane" prefHeight="667.0" prefWidth="812.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.ProfilesController">
    <children>
-      <ImageView fitHeight="615.0" fitWidth="805.0" layoutX="-12.0" layoutY="-4.0" pickOnBounds="true">
+      <ImageView fitHeight="114.0" fitWidth="813.0" layoutX="-1.0" pickOnBounds="true">
          <image>
-            <Image url="@../mycompany_v1/images/bg_white.jpg" />
+            <Image url="@images/red_header.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="profileTable" layoutX="37.0" layoutY="44.0" onMouseClicked="#mouseClickedTable" prefHeight="236.0" prefWidth="182.0" />
-      <Label layoutX="267.0" layoutY="43.0" text="CPU/Session (Sec/100)">
+      <ImageView fitHeight="31.0" fitWidth="139.0" layoutX="206.0" layoutY="235.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/btn_bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="139.0" layoutX="209.0" layoutY="190.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/btn_bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="139.0" layoutX="207.0" layoutY="147.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/btn_bg.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="profileTable" layoutX="32.0" layoutY="121.0" onMouseClicked="#mouseClickedTable" prefHeight="209.0" prefWidth="182.0" />
+      <Label layoutX="95.0" layoutY="392.0" text="CPU/Session (Sec/100)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="269.0" layoutY="71.0" text="CPU/Call (Sec./100)">
+      <Label layoutX="116.0" layoutY="419.0" text="CPU/Call (Sec./100)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="268.0" layoutY="101.0" text="Connect Time (Minutes)">
+      <Label layoutX="88.0" layoutY="443.0" text="Connect Time (Minutes)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="129.0" text="Idle Time (Minutes)">
+      <Label layoutX="117.0" layoutY="470.0" text="Idle Time (Minutes)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="271.0" layoutY="162.0" text="Concurrent Sessions (Per User)">
+      <Label layoutX="465.0" layoutY="179.0" text="Concurrent Sessions (Per User)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="273.0" layoutY="190.0" text="Reads/Session (Blocks)">
+      <Label layoutX="514.0" layoutY="204.0" text="Reads/Session (Blocks)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="272.0" layoutY="220.0" text="Reads/Call (Blocks)">
+      <Label layoutX="537.0" layoutY="227.0" text="Reads/Call (Blocks)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="248.0" text="Private SGA (KBytes)">
+      <Label layoutX="528.0" layoutY="251.0" text="Private SGA (KBytes)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="277.0" text="Composite Limit (Service Units)">
+      <Label layoutX="461.0" layoutY="274.0" text="Composite Limit (Service Units)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="276.0" layoutY="305.0" text="Expire in (days)">
+      <Label layoutX="144.0" layoutY="547.0" text="Expire in (days)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="335.0" text="Lock (days past expiration)">
+      <Label layoutX="73.0" layoutY="574.0" text="Lock (days past expiration)">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="277.0" layoutY="363.0" text="Number of Passwords to keep">
+      <Label layoutX="469.0" layoutY="358.0" text="Number of Passwords to keep">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="278.0" layoutY="396.0" text="Number of days to keep for">
+      <Label layoutX="484.0" layoutY="384.0" text="Number of days to keep for">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="424.0" text="Complexity function">
+      <Label layoutX="531.0" layoutY="467.0" text="Complexity function">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="454.0" text="Number of failed attempts to lock after">
+      <Label layoutX="412.0" layoutY="550.0" text="Number of failed attempts to lock after">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="281.0" layoutY="482.0" text="Number of days to lock for">
+      <Label layoutX="487.0" layoutY="573.0" text="Number of days to lock for">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="CPU_PER_SESSION" layoutX="541.0" layoutY="44.0" text="TEST">
+      <Label fx:id="CPU_PER_SESSION" layoutX="248.0" layoutY="392.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="CPU_PER_CALL" layoutX="541.0" layoutY="70.0" text="TEST">
+      <Label fx:id="CPU_PER_CALL" layoutX="248.0" layoutY="420.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="CONNECT_TIME" layoutX="540.0" layoutY="102.0" text="TEST">
+      <Label fx:id="CONNECT_TIME" layoutX="248.0" layoutY="444.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="IDLE_TIME" layoutX="542.0" layoutY="130.0" text="TEST">
+      <Label fx:id="IDLE_TIME" layoutX="248.0" layoutY="471.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="SESSIONS_PER_USER" layoutX="541.0" layoutY="160.0" text="TEST">
+      <Label fx:id="SESSIONS_PER_USER" layoutX="666.0" layoutY="181.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="LOGICAL_READS_PER_SESSION" layoutX="541.0" layoutY="186.0" text="TEST">
+      <Label fx:id="LOGICAL_READS_PER_SESSION" layoutX="666.0" layoutY="206.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="LOGICAL_READS_PER_CALL" layoutX="540.0" layoutY="218.0" text="TEST">
+      <Label fx:id="LOGICAL_READS_PER_CALL" layoutX="666.0" layoutY="230.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PRIVATE_SGA" layoutX="542.0" layoutY="246.0" text="TEST">
+      <Label fx:id="PRIVATE_SGA" layoutX="666.0" layoutY="253.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="COMPOSITE_LIMIT" layoutX="541.0" layoutY="283.0" text="TEST">
+      <Label fx:id="COMPOSITE_LIMIT" layoutX="666.0" layoutY="276.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_LIFE_TIME" layoutX="541.0" layoutY="309.0" text="TEST">
+      <Label fx:id="PASSWORD_LIFE_TIME" layoutX="248.0" layoutY="548.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_GRACE_TIME" layoutX="540.0" layoutY="341.0" text="TEST">
+      <Label fx:id="PASSWORD_GRACE_TIME" layoutX="248.0" layoutY="575.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_REUSE_MAX" layoutX="542.0" layoutY="369.0" text="TEST">
+      <Label fx:id="PASSWORD_REUSE_MAX" layoutX="666.0" layoutY="359.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_REUSE_TIME" layoutX="541.0" layoutY="399.0" text="TEST">
+      <Label fx:id="PASSWORD_REUSE_TIME" layoutX="666.0" layoutY="385.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_VERIFY_FUNCTION" layoutX="541.0" layoutY="425.0" text="TEST">
+      <Label fx:id="PASSWORD_VERIFY_FUNCTION" layoutX="666.0" layoutY="468.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="540.0" layoutY="457.0" text="TEST">
+      <Label fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="666.0" layoutY="550.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="PASSWORD_LOCK_TIME" layoutX="542.0" layoutY="485.0" text="TEST">
+      <Label fx:id="PASSWORD_LOCK_TIME" layoutX="667.0" layoutY="572.0" text="---">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Label layoutX="43.0" layoutY="348.0" text="Details " textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="191.33334350585938" layoutX="143.0" layoutY="383.0" startX="-100.0" stroke="#aeaeae" />
+      <Label layoutX="398.0" layoutY="136.0" text="Database Services" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="238.33331298828125" layoutX="498.0" layoutY="171.0" startX="-100.0" stroke="#aeaeae" />
+      <Label layoutX="43.0" layoutY="504.0" text="Password" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="191.33334350585938" layoutX="143.0" layoutY="539.0" startX="-100.0" stroke="#aeaeae" />
+      <Label layoutX="397.0" layoutY="315.0" text="History" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="238.33331298828125" layoutX="497.0" layoutY="350.0" startX="-100.0" stroke="#aeaeae" />
+      <Label layoutX="399.0" layoutY="424.0" text="Complexity" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="238.33331298828125" layoutX="499.0" layoutY="459.0" startX="-100.0" stroke="#aeaeae" />
+      <Label layoutX="399.0" layoutY="506.0" text="Failed Login" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Line endX="238.33331298828125" layoutX="499.0" layoutY="541.0" startX="-100.0" stroke="#aeaeae" />
+      <ImageView fitHeight="50.0" fitWidth="813.0" layoutX="-1.0" layoutY="618.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/red_footer.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="128.0" layoutX="11.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logoOrcl_white.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="86.0" layoutX="724.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Logo_WHITE.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="close" layoutX="779.0" layoutY="12.0" onMouseClicked="#closeApp" text="X" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="733.0" layoutY="2.0" text="-" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="42.0" />
+         </font>
+      </Label>
+      <Button layoutX="726.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizeApp" opacity="0.001" prefHeight="23.0" prefWidth="27.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="224.0" layoutY="149.0" text="Create" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="226.0" layoutY="192.0" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="224.0" layoutY="236.0" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="214.0" layoutY="149.0" mnemonicParsing="false" onAction="#toCreateProfile" opacity="1.0E-5" prefHeight="25.0" prefWidth="127.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="214.0" layoutY="195.0" mnemonicParsing="false" opacity="1.0E-5" prefHeight="25.0" prefWidth="127.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="215.0" layoutY="236.0" mnemonicParsing="false" opacity="1.0E-5" prefHeight="25.0" prefWidth="127.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="558.0" layoutY="103.0" text="Logged in As" />
+      <Label layoutX="633.0" layoutY="103.0" text="SYSTEM" textFill="#b00505" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Button layoutX="683.0" layoutY="98.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Refresh" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="743.0" layoutY="99.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Logout" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

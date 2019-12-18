@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController5">
+   <children>
+      <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="90.0" opacity="0.45" pickOnBounds="true">
+         <image>
+            <Image url="@images/btn_bg_white.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="93.0" fitWidth="330.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/red_header.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="330.0" layoutY="568.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/red_footer.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="72.0" layoutX="8.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logoOrcl_white.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="61.0" layoutX="267.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Logo_WHITE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="194.0" layoutY="518.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/btn_bg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="14.0" layoutY="518.0" pickOnBounds="true" rotate="180.0">
+         <image>
+            <Image url="@images/btn_bg.png" />
+         </image>
+         <rotationAxis>
+            <Point3D y="90.0" z="1.0" />
+         </rotationAxis>
+      </ImageView>
+      <Label layoutX="225.0" layoutY="520.0" text="Next" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="520.0" text="Previous" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="112.0" text="Create a Profile" textFill="#cd2020">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="close" layoutX="305.0" layoutY="7.0" onMouseClicked="#closeApp" text="X" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="267.0" layoutY="-3.0" text="-" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="42.0" />
+         </font>
+      </Label>
+      <Button fx:id="minimize" layoutX="260.0" layoutY="9.0" mnemonicParsing="false" onAction="#minimizeApp" opacity="0.001" prefHeight="23.0" prefWidth="27.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#toNext" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" onAction="#toPrevious" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="21.0" layoutY="257.0" text="Number of Passwords to keep :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="314.0" text="Number of days to keep for :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="167.0" text="Password " textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
+      <TextField disable="true" layoutX="150.0" layoutY="278.0" prefHeight="30.0" prefWidth="160.0" promptText="Number of Passwords to keep" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
+      <ComboBox layoutX="23.0" layoutY="278.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField disable="true" layoutX="150.0" layoutY="335.0" prefHeight="30.0" prefWidth="160.0" promptText="Number of days to keep for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
+      <ComboBox layoutX="23.0" layoutY="335.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <Label layoutX="107.0" layoutY="171.0" text="(History)" textFill="#da1010">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="501.0" text="5" textFill="RED">
+         <font>
+            <Font name="Brush Script MT Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="162.0" layoutY="517.0" text="/" textFill="RED">
+         <font>
+            <Font name="Blackadder ITC" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="533.0" text="7" textFill="RED">
+         <font>
+            <Font name="Brush Script MT Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="252.0" layoutY="84.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
