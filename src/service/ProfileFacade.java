@@ -19,14 +19,14 @@ import java.util.logging.Logger;
  * @author Youssef
  */
 public class ProfileFacade {
-    
+
     Config c = new Config();
     ResourceFacade rf = new ResourceFacade();
-    
+
     public List<Profile> getAllProfiles() {
         try {
             List<Profile> list = new ArrayList();
-            ResultSet rs = c.loadData("SYSTEM","SYSTEM" ,"select distinct profile from dba_profiles");
+            ResultSet rs = c.loadData("SYSTEM", "SYSTEM", "select distinct profile from dba_profiles");
 
             while (rs.next()) {
                 Resource resource = rf.getRecourcesByProfile(rs.getString(1));
@@ -40,6 +40,37 @@ public class ProfileFacade {
             Logger.getLogger(ProfileFacade.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-
     }
+
+    public int createProfile(Profile profile) {
+        String query;
+        query = "CREATE PROFILE " + profile.getName() + " LIMIT \n";
+
+        query += "SESSIONS_PER_USER " + profile.getResource().getSessions_per_user() + " \n";
+        query += "CPU_PER_SESSION " + profile.getResource().getCpu_per_session() + " \n";
+        query += "CPU_PER_CALL " + profile.getResource().getCpu_per_call() + " \n";
+        query += "CONNECT_TIME " + profile.getResource().getConnect_time() + " \n";
+        query += "LOGICAL_READS_PER_SESSION " + profile.getResource().getLogical_reads_per_session() + " \n";
+        query += "LOGICAL_READS_PER_CALL " + profile.getResource().getLogical_reads_per_call() + " \n";
+        query += "PRIVATE_SGA " + profile.getResource().getPrivate_sga() + " \n";
+        query += "COMPOSITE_LIMIT " + profile.getResource().getComposite_limit() + " \n";
+
+        query += "FAILED_LOGIN_ATTEMPTS " + profile.getResource().getFailed_login_attempts() + " \n";
+        query += "PASSWORD_LIFE_TIME " + profile.getResource().getPassword_life_time() + " \n";
+        query += "PASSWORD_REUSE_TIME " + profile.getResource().getPassword_reuse_time() + " \n";
+        query += "PASSWORD_REUSE_MAX " + profile.getResource().getPassword_reuse_max() + " \n";
+        query += "PASSWORD_VERIFY_FUNCTION " + profile.getResource().getPassword_verify_function() + " \n";
+        query += "PASSWORD_LOCK_TIME " + profile.getResource().getPassword_lock_time() + " \n";
+        query += "PASSWORD_GRACE_TIME " + profile.getResource().getPassword_grace_time() + " \n";
+        query += "IDLE_TIME " + profile.getResource().getIdle_time() + " ";
+
+        //   System.out.println(profile.toString());
+        return c.execQuery("SYSTEM", "SYSTEM", query);
+    }
+
+    public int dropProfile(String pName) {
+        String query = "DROP PROFILE " + pName + " CASCADE ";
+        return c.execQuery("SYSTEM", "SYSTEM", query);
+    }
+
 }

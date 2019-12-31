@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import service.Config;
+import util.Session;
 
 /**
  * FXML Controller class
@@ -47,11 +48,10 @@ public class LoginFXMLController implements Initializable {
             if (con != null) {
                 DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
             } else {
-                JOptionPane.showMessageDialog(null, "Invalid username/password !", "logon denied", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Invalid username/password !", "login denied", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            System.out.println("NOOOOO");
-            JOptionPane.showMessageDialog(null, "The username and the password are required  !", "logon denied", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The username and the password are required  !", "login denied", JOptionPane.ERROR_MESSAGE);
         }
 
     }

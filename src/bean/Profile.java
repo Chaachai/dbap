@@ -48,12 +48,14 @@ public class Profile {
     public void setResource(Resource resource) {
         this.resource = resource;
     }
-    
-    
 
     @Override
     public String toString() {
-        return name;
+        return "Profile{" + "name=" + name + ", resource=" + resource + '}';
     }
+    
+    
+
+   
 
 }

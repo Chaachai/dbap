@@ -167,7 +167,34 @@ public class Resource {
 
     @Override
     public String toString() {
-        return "Resource{" + "cpu_per_session=" + cpu_per_session + ", cpu_per_call=" + cpu_per_call + ", connect_time=" + connect_time + ", idle_time=" + idle_time + ", sessions_per_user=" + sessions_per_user + ", logical_reads_per_session=" + logical_reads_per_session + ", logical_reads_per_call=" + logical_reads_per_call + ", private_sga=" + private_sga + ", composite_limit=" + composite_limit + ", password_life_time=" + password_life_time + ", password_grace_time=" + password_grace_time + ", password_reuse_max=" + password_reuse_max + ", password_reuse_time=" + password_reuse_time + ", password_verify_function=" + password_verify_function + ", failed_login_attempts=" + failed_login_attempts + ", password_lock_time=" + password_lock_time + '}';
+        return "Resource{" 
+                + "cpu_per_session=" 
+                + cpu_per_session 
+                + ", cpu_per_call=" 
+                + cpu_per_call 
+                + ", connect_time=" 
+                + connect_time 
+                + ", idle_time=" 
+                + idle_time 
+                + ", sessions_per_user=" 
+                + sessions_per_user 
+                + ", logical_reads_per_session=" 
+                + logical_reads_per_session 
+                + ", logical_reads_per_call=" 
+                + logical_reads_per_call 
+                + ", private_sga=" 
+                + private_sga 
+                + ", composite_limit=" 
+                + composite_limit + ", password_life_time=" 
+                + password_life_time + ", password_grace_time=" 
+                + password_grace_time + ", password_reuse_max=" 
+                + password_reuse_max + ", password_reuse_time=" 
+                + password_reuse_time + ", password_verify_function=" 
+                + password_verify_function + ", failed_login_attempts=" 
+                + failed_login_attempts 
+                + ", password_lock_time=" 
+                + password_lock_time 
+                + '}';
     }
     
     

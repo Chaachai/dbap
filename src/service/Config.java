@@ -56,6 +56,8 @@ public class Config {
         Connection con = connect(username, password);
         try {
             Statement stmt = con.createStatement();
+            System.out.println("*****************************");
+            System.out.println(query);
             stmt.executeUpdate(query);
             return 1;
         } catch (SQLException ex) {
@@ -79,5 +81,4 @@ public class Config {
 //            return 1L;
 //        }        
 //    }
-
 }

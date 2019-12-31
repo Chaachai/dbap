@@ -85,7 +85,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+      <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#createProfile" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -109,10 +109,10 @@
          </font>
       </Label>
       <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-      <TextField disable="true" layoutX="150.0" layoutY="278.0" prefHeight="30.0" prefWidth="160.0" promptText="Number of failed attempts to lock after" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="23.0" layoutY="278.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
-      <TextField disable="true" layoutX="150.0" layoutY="335.0" prefHeight="30.0" prefWidth="160.0" promptText="Number of days to lock for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="23.0" layoutY="335.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="FAILED_LOGIN_ATTEMPTS_field" layoutX="19.0" layoutY="277.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of failed attempts to lock after" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="203.0" layoutY="277.0" onAction="#FAILED_LOGIN_ATTEMPTS_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="PASSWORD_LOCK_TIME_field" layoutX="19.0" layoutY="334.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of days to lock for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="PASSWORD_LOCK_TIME" layoutX="203.0" layoutY="334.0" onAction="#PASSWORD_LOCK_TIME_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
       <Label layoutX="107.0" layoutY="171.0" text="(Failed Login)" textFill="#da1010">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -138,5 +138,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="error" layoutX="99.0" layoutY="444.0" text="Please use valid values !" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

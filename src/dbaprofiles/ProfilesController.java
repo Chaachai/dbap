@@ -9,15 +9,21 @@ import bean.Profile;
 import helper.ProfileFXHelper;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import service.ProfileFacade;
+import util.Session;
 
 /**
  * FXML Controller class
@@ -63,6 +69,9 @@ public class ProfilesController implements Initializable {
     private Label close;
 
     @FXML
+    private TextField hiddenField;
+
+    @FXML
     private TableView profileTable = new TableView();
 
     ProfileFacade profileFacade = new ProfileFacade();
@@ -77,9 +86,37 @@ public class ProfilesController implements Initializable {
         DBAProfiles.forward(actionEvent, "CreateProfile.fxml", this.getClass());
     }
 
+    @FXML
+    private void deleteProfile() {
+        if (!hiddenField.getText().equalsIgnoreCase("default")) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("WARNING !!");
+            alert.setContentText("You are about to delete the profile named '"
+                    + hiddenField.getText().toUpperCase() + "'. \nAre you sure about that ?");
+            alert.setTitle("WARNING !!");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                int res = profileFacade.dropProfile(hiddenField.getText());
+                if (res == 1) {
+                    profileFXHelper.remove(profileFXHelper.getSelected());
+                    Session.delete("selectedProfile");
+                    clear();
+                } else {
+                    JOptionPane.showMessageDialog(null, "An error has occured, please try again !", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "You cannot drop the DEFAULT profile !", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
     public void mouseClickedTable() {
         Profile profile = profileFXHelper.getSelected();
         if (profile != null) {
+            Session.updateAttribute(profile, "selectedProfile");
+            hiddenField.setText(profile.getName());
+
             COMPOSITE_LIMIT.setText(profile.getResource().getComposite_limit());
             SESSIONS_PER_USER.setText(profile.getResource().getSessions_per_user());
             CPU_PER_SESSION.setText(profile.getResource().getCpu_per_session());
@@ -110,16 +147,37 @@ public class ProfilesController implements Initializable {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
-    
+
     @FXML
     private void refresh(ActionEvent actionEvent) throws IOException {
         DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
     }
-    
+
     @FXML
     private void logout(ActionEvent actionEvent) throws IOException {
-        
+        Session.clear();
         DBAProfiles.forward(actionEvent, "LoginFXML.fxml", this.getClass());
+    }
+
+    public void clear() {
+        hiddenField.setText("");
+        COMPOSITE_LIMIT.setText("---");
+        SESSIONS_PER_USER.setText("---");
+        CPU_PER_SESSION.setText("---");
+        CPU_PER_CALL.setText("---");
+        LOGICAL_READS_PER_SESSION.setText("---");
+        LOGICAL_READS_PER_CALL.setText("---");
+        IDLE_TIME.setText("---");
+        CONNECT_TIME.setText("---");
+        PRIVATE_SGA.setText("---");
+        FAILED_LOGIN_ATTEMPTS.setText("---");
+        PASSWORD_LIFE_TIME.setText("---");
+        PASSWORD_REUSE_TIME.setText("---");
+        PASSWORD_REUSE_MAX.setText("---");
+        PASSWORD_VERIFY_FUNCTION.setText("---");
+        PASSWORD_LOCK_TIME.setText("---");
+        PASSWORD_GRACE_TIME.setText("---");
+
     }
 
     /**

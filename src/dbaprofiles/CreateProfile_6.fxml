@@ -104,8 +104,8 @@
          </font>
       </Label>
       <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-      <TextField disable="true" layoutX="149.0" layoutY="307.0" prefHeight="30.0" prefWidth="160.0" promptText="Complexity function" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="22.0" layoutY="307.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="PASSWORD_VERIFY_FUNCTION_field" layoutX="22.0" layoutY="307.0" prefHeight="30.0" prefWidth="178.0" promptText="Complexity function" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="PASSWORD_VERIFY_FUNCTION" layoutX="210.0" layoutY="307.0" onAction="#PASSWORD_VERIFY_FUNCTION_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
       <Label layoutX="107.0" layoutY="171.0" text="(Complexity)" textFill="#da1010">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -131,5 +131,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="error" layoutX="103.0" layoutY="436.0" text="Please use valid values !" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

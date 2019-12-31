@@ -119,14 +119,14 @@
          </font>
       </Label>
       <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-      <TextField disable="true" layoutX="151.0" layoutY="249.0" prefHeight="30.0" prefWidth="160.0" promptText="CPU/Session (Sec./100)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="24.0" layoutY="249.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
-      <TextField disable="true" layoutX="151.0" layoutY="305.0" prefHeight="30.0" prefWidth="160.0" promptText="CPU/Call (Sec./100)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="24.0" layoutY="305.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
-      <TextField disable="true" layoutX="151.0" layoutY="362.0" prefHeight="30.0" prefWidth="160.0" promptText="Connect Time (Minutes)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="24.0" layoutY="362.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
-      <TextField disable="true" layoutX="151.0" layoutY="421.0" prefHeight="30.0" prefWidth="160.0" promptText="Idle Time (Minutes)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" />
-      <ComboBox layoutX="24.0" layoutY="421.0" prefHeight="30.0" prefWidth="119.0" promptText="Default" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="cpu_per_session_field" layoutX="24.0" layoutY="248.0" prefHeight="30.0" prefWidth="178.0" promptText="CPU/Session (Sec./100)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="cpu_per_session" layoutX="211.0" layoutY="248.0" onAction="#cpuPerSessionChange" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="cpu_per_call_field" layoutX="23.0" layoutY="305.0" prefHeight="30.0" prefWidth="178.0" promptText="CPU/Call (Sec./100)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="cpu_per_call" layoutX="211.0" layoutY="305.0" onAction="#cpuPerCallChange" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="connect_time_field" layoutX="23.0" layoutY="363.0" prefHeight="30.0" prefWidth="178.0" promptText="Connect Time (Minutes)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="connect_time" layoutX="211.0" layoutY="363.0" onAction="#connectTimeChange" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="idle_time_field" layoutX="23.0" layoutY="420.0" prefHeight="30.0" prefWidth="178.0" promptText="Idle Time (Minutes)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+      <ComboBox fx:id="idle_time" layoutX="211.0" layoutY="420.0" onAction="#idleTimeChange" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" style="-fx-background-color: #ffffff; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" />
       <Label layoutX="152.0" layoutY="502.0" text="2" textFill="RED">
          <font>
             <Font name="Brush Script MT Italic" size="35.0" />
@@ -147,5 +147,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="error" layoutX="105.0" layoutY="472.0" text="Please use valid values !" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

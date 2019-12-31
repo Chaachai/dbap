@@ -37,7 +37,7 @@
             <Image url="@images/Logo_WHITE.png" />
          </image>
       </ImageView>
-      <TextField layoutX="28.0" layoutY="305.0" prefHeight="39.0" prefWidth="276.0" promptText="Name" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;">
+      <TextField fx:id="pName" layoutX="28.0" layoutY="305.0" prefHeight="39.0" prefWidth="276.0" promptText="Name" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;">
          <font>
             <Font size="16.0" />
          </font>
@@ -121,5 +121,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="error" layoutX="28.0" layoutY="352.0" text="Please set a name for the profile before proceeding !" textFill="RED" visible="false" />
    </children>
 </AnchorPane>
