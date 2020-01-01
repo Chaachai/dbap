@@ -1,0 +1,15 @@
+.combo-box{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-selection-bar: #d60202;
+    -fx-selection-bar-non-focused: salmon;
+    -fx-border-color: #e00e0e;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover{
+    -fx-background-color: #bd1e1e;
+}

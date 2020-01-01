@@ -79,6 +79,9 @@ public class ProfilesController implements Initializable {
 
     private void initHelper() {
         profileFXHelper = new ProfileFXHelper(profileTable, profileFacade.getAllProfiles());
+        profileTable.setStyle("-fx-selection-bar: #d60202; "
+                + "-fx-selection-bar-non-focused: salmon; "
+        );
     }
 
     @FXML
@@ -88,7 +91,9 @@ public class ProfilesController implements Initializable {
 
     @FXML
     private void deleteProfile() {
-        if (!hiddenField.getText().equalsIgnoreCase("default")) {
+        if (hiddenField.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Select a profile to delete !", "No profile was selected", JOptionPane.INFORMATION_MESSAGE);
+        } else if (!hiddenField.getText().equalsIgnoreCase("default")) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("WARNING !!");
             alert.setContentText("You are about to delete the profile named '"

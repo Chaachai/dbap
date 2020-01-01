@@ -11,7 +11,7 @@ public class ProfileFXHelper extends AbstractFxHelper<Profile> {
 
     static {
         titres = new AbstractFxHelperItem[]{
-            new AbstractFxHelperItem("NAME", "name")
+            new AbstractFxHelperItem("PROFILE NAME", "name")
         };
     }
 

@@ -122,11 +122,10 @@ public class CreateProfileController5 implements Initializable {
     private void inputConstraint() {
         if (!PASSWORD_REUSE_MAX_field.getText().equalsIgnoreCase("DEFAULT")
                 && !PASSWORD_REUSE_MAX_field.getText().equalsIgnoreCase("UNLIMITED")) {
-            
+            PASSWORD_REUSE_TIME_field.setText("UNLIMITED");
             PASSWORD_REUSE_TIME_field.setDisable(true);
             PASSWORD_REUSE_TIME.setDisable(true);
         } else {
-            PASSWORD_REUSE_TIME_field.setText("UNLIMITED");
             PASSWORD_REUSE_TIME_field.setDisable(false);
             PASSWORD_REUSE_TIME.setDisable(false);
         }

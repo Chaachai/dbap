@@ -62,7 +62,12 @@ public class CreateProfileController2 implements Initializable {
         vals.add("6000");
         vals.add("36000");
         cpu_per_session.setItems(vals);
-        //   cpu_per_session.getSelectionModel().selectFirst();
+//        cpu_per_session.setStyle("-fx-selection-bar: #d60202; "
+//                + "-fx-background-color: #FFFFFF;"
+//                + "-fx-border-color: #e00e0e;"
+//                + "-fx-background-radius: 15;"
+//                + "-fx-border-radius: 15;"
+//        );
     }
 
     private void initComboboxCpuPerCall() {
