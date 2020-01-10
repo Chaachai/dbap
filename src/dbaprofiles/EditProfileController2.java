@@ -27,7 +27,7 @@ import util.Session;
  *
  * @author Youssef
  */
-public class CreateProfileController2 implements Initializable {
+public class EditProfileController2 implements Initializable {
 
     @FXML
     private Label close;
@@ -153,7 +153,7 @@ public class CreateProfileController2 implements Initializable {
 
     @FXML
     private void toPrevious(ActionEvent actionEvent) throws IOException {
-        DBAProfiles.forward(actionEvent, "CreateProfile_1.fxml", this.getClass());
+        DBAProfiles.forward(actionEvent, "EditProfile_1.fxml", this.getClass());
     }
 
     @FXML
@@ -163,22 +163,17 @@ public class CreateProfileController2 implements Initializable {
                 && checkInputs(connect_time_field.getText())
                 && checkInputs(idle_time_field.getText())) {
 
-            Profile p = (Profile) Session.getAttribut("profile");
-            Resource r;
-            if (p.getResource() != null) {
-                r = p.getResource();
-            }else{
-                r = new Resource();
-            }
+            Profile p = (Profile) Session.getAttribut("selectedProfile");
+            Resource r = p.getResource();
             r.setCpu_per_session(cpu_per_session_field.getText());
             r.setCpu_per_call(cpu_per_call_field.getText());
             r.setConnect_time(connect_time_field.getText());
             r.setIdle_time(idle_time_field.getText());
 
             p.setResource(r);
-            Session.updateAttribute(p, "profile");
+            Session.updateAttribute(p, "selectedProfile");
 
-            DBAProfiles.forward(actionEvent, "CreateProfile_3.fxml", this.getClass());
+            DBAProfiles.forward(actionEvent, "EditProfile_3.fxml", this.getClass());
         } else {
             error.setVisible(true);
         }
@@ -187,7 +182,7 @@ public class CreateProfileController2 implements Initializable {
 
     @FXML
     private void toHome(ActionEvent actionEvent) throws IOException {
-        Session.delete("profile");
+        Session.delete("selectedProfile");
         DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
     }
 
@@ -202,7 +197,7 @@ public class CreateProfileController2 implements Initializable {
         initComboboxConnectTime();
         initComboboxIdleTime();
 
-        Profile p = (Profile) Session.getAttribut("profile");
+        Profile p = (Profile) Session.getAttribut("selectedProfile");
         if (p.getResource() != null) {
             if (p.getResource().getCpu_per_session() != null) {
                 cpu_per_session_field.setText(p.getResource().getCpu_per_session());

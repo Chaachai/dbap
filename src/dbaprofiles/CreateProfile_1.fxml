@@ -4,19 +4,17 @@
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController7">
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController1">
     <children>
-        <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="90.0" opacity="0.45" pickOnBounds="true">
+        <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="100.0" opacity="0.45" pickOnBounds="true">
             <image>
                 <Image url="@images/btn_bg_white.png" />
             </image>
@@ -41,12 +39,17 @@
                 <Image url="@images/Logo_WHITE.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="194.0" layoutY="518.0" pickOnBounds="true">
+        <TextField fx:id="pName" layoutX="28.0" layoutY="305.0" prefHeight="39.0" prefWidth="276.0" promptText="Name" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextField>
+        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="194.0" layoutY="522.0" pickOnBounds="true">
             <image>
                 <Image url="@images/btn_bg.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="14.0" layoutY="518.0" pickOnBounds="true" rotate="180.0">
+        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="14.0" layoutY="522.0" pickOnBounds="true" rotate="180.0">
             <image>
                 <Image url="@images/btn_bg.png" />
             </image>
@@ -54,19 +57,24 @@
                 <Point3D y="90.0" z="1.0" />
             </rotationAxis>
         </ImageView>
-        <Label layoutX="219.0" layoutY="520.0" text="Create" textFill="WHITE">
+        <Label layoutX="225.0" layoutY="524.0" text="Next" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="40.0" layoutY="520.0" text="Previous" textFill="WHITE">
+        <Label layoutX="40.0" layoutY="524.0" text="Previous" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="93.0" layoutY="112.0" text="Create a Profile" textFill="#cd2020">
+        <Label layoutX="93.0" layoutY="122.0" text="Create a Profile" textFill="#cd2020">
             <font>
                 <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="279.0" text="Profile name :" textFill="#000000">
+            <font>
+                <Font size="14.0" />
             </font>
         </Label>
         <Label fx:id="close" layoutX="305.0" layoutY="7.0" onMouseClicked="#closeApp" text="X" textFill="WHITE">
@@ -87,52 +95,27 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#createProfile" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+        <Button layoutX="194.0" layoutY="523.0" mnemonicParsing="false" onAction="#toNext" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" onAction="#toPrevious" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+        <Button layoutX="14.0" layoutY="523.0" mnemonicParsing="false" onAction="#toPrevious" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Label layoutX="21.0" layoutY="257.0" text="Number of failed attempts to lock after :">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="21.0" layoutY="314.0" text="Number of days to lock for :">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="19.0" layoutY="167.0" text="Password " textFill="#da1010">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-        <TextField fx:id="FAILED_LOGIN_ATTEMPTS_field" layoutX="19.0" layoutY="277.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of failed attempts to lock after" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="203.0" layoutY="277.0" onAction="#FAILED_LOGIN_ATTEMPTS_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <TextField fx:id="PASSWORD_LOCK_TIME_field" layoutX="19.0" layoutY="334.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of days to lock for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="PASSWORD_LOCK_TIME" layoutX="203.0" layoutY="334.0" onAction="#PASSWORD_LOCK_TIME_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <Label layoutX="107.0" layoutY="171.0" text="(Failed Login)" textFill="#da1010">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="151.0" layoutY="502.0" text="7" textFill="RED">
+        <Label layoutX="153.0" layoutY="505.0" text="1" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="35.0" />
             </font>
         </Label>
-        <Label layoutX="162.0" layoutY="518.0" text="/" textFill="RED">
+        <Label layoutX="164.0" layoutY="521.0" text="/" textFill="RED">
             <font>
                 <Font name="Blackadder ITC" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="170.0" layoutY="534.0" text="7" textFill="RED">
+        <Label layoutX="172.0" layoutY="537.0" text="7" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="18.0" />
             </font>
@@ -150,7 +133,7 @@
                 <Image url="@images/home_icon.png" />
             </image>
         </ImageView>
-        <Label fx:id="error" layoutX="99.0" layoutY="444.0" text="Please use valid values !" textFill="RED" visible="false" />
+        <Label fx:id="error" layoutX="28.0" layoutY="352.0" text="Please set a name for the profile before proceeding !" textFill="RED" visible="false" />
         <Text fill="WHITE" layoutX="115.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
             <font>
                 <Font size="10.0" />

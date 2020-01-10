@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -11,8 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController">
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.EditProfileController1">
     <children>
         <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="100.0" opacity="0.45" pickOnBounds="true">
             <image>
@@ -29,17 +29,17 @@
                 <Image url="@images/red_footer.jpg" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="72.0" layoutX="8.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="33.0" fitWidth="72.0" layoutX="9.0" layoutY="583.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/logoOrcl_white.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="61.0" layoutX="267.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="36.0" fitWidth="64.0" layoutX="262.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/Logo_WHITE.png" />
             </image>
         </ImageView>
-        <TextField fx:id="pName" layoutX="28.0" layoutY="305.0" prefHeight="39.0" prefWidth="276.0" promptText="Name" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;">
+        <TextField fx:id="pName" disable="true" layoutX="28.0" layoutY="305.0" prefHeight="39.0" prefWidth="276.0" promptText="Name" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;">
             <font>
                 <Font size="16.0" />
             </font>
@@ -67,7 +67,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="93.0" layoutY="122.0" text="Create a Profile" textFill="#cd2020">
+        <Label layoutX="115.0" layoutY="122.0" text="Edit Profile" textFill="#cd2020">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -120,18 +120,25 @@
                 <Font name="Brush Script MT Italic" size="18.0" />
             </font>
         </Label>
-        <Button layoutX="251.0" layoutY="87.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Home" textFill="WHITE">
+        <Button layoutX="243.0" layoutY="87.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Home" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
+            <padding>
+            <Insets left="20.0" />
+            </padding>
         </Button>
-        <Label fx:id="error" layoutX="28.0" layoutY="352.0" text="Please set a name for the profile before proceeding !" textFill="RED" visible="false" />
-        <Text fill="WHITE" layoutX="118.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
+        <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="252.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/home_icon.png" />
+            </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="115.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
             <font>
                 <Font size="10.0" />
             </font>
         </Text>
-        <Text fill="WHITE" layoutX="125.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All rights reserved" textAlignment="CENTER">
+        <Text fill="WHITE" layoutX="123.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All rights reserved" textAlignment="CENTER">
             <font>
                 <Font size="10.0" />
             </font>

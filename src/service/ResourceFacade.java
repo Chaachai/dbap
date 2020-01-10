@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import util.Session;
 
 /**
  *
@@ -21,17 +22,18 @@ import java.util.logging.Logger;
 public class ResourceFacade {
 
     Config c = new Config();
+    String login = (String) Session.getAttribut("login");
+    String password = (String) Session.getAttribut("password");
 
     public Resource getRecourcesByProfile(String profile) {
         try {
             Resource resource = new Resource();
             List<String> limits = new ArrayList();
             ResultSet rs = c.loadData(
-                    "SYSTEM",
-                    "SYSTEM",
                     "SELECT limit "
                     + "from dba_profiles "
-                    + "where profile = '" + profile + "' ");
+                    + "where profile = '" + profile + "' "
+            );
 
             while (rs.next()) {
                 limits.add(rs.getString(1));

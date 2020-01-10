@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController7">
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.EditProfileController5">
     <children>
         <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="90.0" opacity="0.45" pickOnBounds="true">
             <image>
@@ -54,7 +54,7 @@
                 <Point3D y="90.0" z="1.0" />
             </rotationAxis>
         </ImageView>
-        <Label layoutX="219.0" layoutY="520.0" text="Create" textFill="WHITE">
+        <Label layoutX="225.0" layoutY="520.0" text="Next" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -64,7 +64,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="93.0" layoutY="112.0" text="Create a Profile" textFill="#cd2020">
+        <Label layoutX="115.0" layoutY="112.0" text="Edit Profile" textFill="#cd2020">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -87,7 +87,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#createProfile" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+        <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#toNext" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -97,12 +97,12 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Label layoutX="21.0" layoutY="257.0" text="Number of failed attempts to lock after :">
+        <Label layoutX="21.0" layoutY="257.0" text="Number of Passwords to keep :">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="21.0" layoutY="314.0" text="Number of days to lock for :">
+        <Label layoutX="21.0" layoutY="314.0" text="Number of days to keep for :">
             <font>
                 <Font size="14.0" />
             </font>
@@ -113,31 +113,31 @@
             </font>
         </Label>
         <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-        <TextField fx:id="FAILED_LOGIN_ATTEMPTS_field" layoutX="19.0" layoutY="277.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of failed attempts to lock after" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="203.0" layoutY="277.0" onAction="#FAILED_LOGIN_ATTEMPTS_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <TextField fx:id="PASSWORD_LOCK_TIME_field" layoutX="19.0" layoutY="334.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of days to lock for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="PASSWORD_LOCK_TIME" layoutX="203.0" layoutY="334.0" onAction="#PASSWORD_LOCK_TIME_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <Label layoutX="107.0" layoutY="171.0" text="(Failed Login)" textFill="#da1010">
+        <TextField fx:id="PASSWORD_REUSE_MAX_field" layoutX="22.0" layoutY="278.0" onKeyReleased="#inputConstraint" prefHeight="30.0" prefWidth="178.0" promptText="Number of Passwords to keep" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="PASSWORD_REUSE_MAX" layoutX="213.0" layoutY="278.0" onAction="#PASSWORD_REUSE_MAX_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <TextField fx:id="PASSWORD_REUSE_TIME_field" layoutX="22.0" layoutY="335.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of days to keep for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="PASSWORD_REUSE_TIME" layoutX="213.0" layoutY="335.0" onAction="#PASSWORD_REUSE_TIME_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <Label layoutX="107.0" layoutY="171.0" text="(History)" textFill="#da1010">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="151.0" layoutY="502.0" text="7" textFill="RED">
+        <Label layoutX="151.0" layoutY="501.0" text="5" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="35.0" />
             </font>
         </Label>
-        <Label layoutX="162.0" layoutY="518.0" text="/" textFill="RED">
+        <Label layoutX="162.0" layoutY="517.0" text="/" textFill="RED">
             <font>
                 <Font name="Blackadder ITC" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="170.0" layoutY="534.0" text="7" textFill="RED">
+        <Label layoutX="170.0" layoutY="533.0" text="7" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="18.0" />
             </font>
         </Label>
-        <Button layoutX="243.0" layoutY="87.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Home" textFill="WHITE">
+       <Button layoutX="243.0" layoutY="87.0" mnemonicParsing="false" onAction="#toHome" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Home" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -150,7 +150,7 @@
                 <Image url="@images/home_icon.png" />
             </image>
         </ImageView>
-        <Label fx:id="error" layoutX="99.0" layoutY="444.0" text="Please use valid values !" textFill="RED" visible="false" />
+        <Label fx:id="error" layoutX="107.0" layoutY="429.0" text="Please use valid values !" textFill="RED" visible="false" />
         <Text fill="WHITE" layoutX="115.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
             <font>
                 <Font size="10.0" />
@@ -160,6 +160,6 @@
             <font>
                 <Font size="10.0" />
             </font>
-        </Text> 
+        </Text>   
     </children>
 </AnchorPane>

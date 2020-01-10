@@ -29,7 +29,7 @@ import util.Session;
  *
  * @author CHAACHAI Youssef
  */
-public class LoginFXMLController implements Initializable {
+public class Login2FXMLController implements Initializable {
 
     Config config = new Config();
 
@@ -42,6 +42,10 @@ public class LoginFXMLController implements Initializable {
     private TextField login;
     @FXML
     private PasswordField password;
+    @FXML
+    private TextField dbname;
+    @FXML
+    private TextField port;
 
     @FXML
     private Pane pane;
@@ -51,7 +55,7 @@ public class LoginFXMLController implements Initializable {
     @FXML
     public void connect(ActionEvent actionEvent) throws IOException {
         if (testChamps()) {
-            Connection con = config.connect(login.getText(), password.getText(), "1521", "dbap");
+            Connection con = config.connect(login.getText(), password.getText(), port.getText(), dbname.getText());
             if (con != null) {
                 Session.updateAttribute(login.getText(), "login");
                 Session.updateAttribute(password.getText(), "password");
@@ -90,11 +94,6 @@ public class LoginFXMLController implements Initializable {
     public void minimizeApp(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
-    }
-    
-    @FXML
-    private void toLogin2(ActionEvent actionEvent) throws IOException {
-        DBAProfiles.forward(actionEvent, "Login2FXML.fxml", this.getClass());
     }
 
     /**

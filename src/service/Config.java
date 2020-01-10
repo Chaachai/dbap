@@ -13,35 +13,43 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import util.Session;
 
 /**
  *
  * @author CHAACHAI Youssef
  */
 public class Config {
+    
+//    Connection con = null;
 
-    public Connection connect(String username, String password) {
+    public Connection connect(String username, String password, String port, String DBName) {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
-
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:dbap", username, password);
-
+            Connection con = DriverManager.getConnection(
+                    "jdbc:oracle:thin:@localhost:" + port + ":" + DBName, //Default Port = 1521 & DBName = dbap
+                    username,
+                    password
+            );
             if (con != null) {
                 System.out.println("Connected !");
             } else {
                 System.out.println("Not connected !!");
             }
 
-            return con;
+            Session.createAtrribute(con, "connection");
 
+            return con;
         } catch (Exception e) {
             System.out.println(e);
+            Session.updateAttribute(e.toString(), "error");
             return null;
         }
     }
 
-    public ResultSet loadData(String username, String password, String query) {
-        Connection con = connect(username, password);
+    public ResultSet loadData(String query) {
+        Connection con = (Connection) Session.getAttribut("connection");
+//        Connection con = connect(username, password);
         try {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -52,12 +60,14 @@ public class Config {
         }
     }
 
-    public int execQuery(String username, String password, String query) {
-        Connection con = connect(username, password);
+    public int execQuery(String query) {
+//        Connection con = connect(username, password);
+        Connection con = (Connection) Session.getAttribut("connection");
         try {
             Statement stmt = con.createStatement();
             System.out.println("*****************************");
             System.out.println(query);
+            System.out.println("*****************************");
             stmt.executeUpdate(query);
             return 1;
         } catch (SQLException ex) {

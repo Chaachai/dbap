@@ -23,7 +23,7 @@ import util.Session;
  *
  * @author Youssef
  */
-public class CreateProfileController implements Initializable {
+public class CreateProfileController1 implements Initializable {
 
     @FXML
     private Label close;

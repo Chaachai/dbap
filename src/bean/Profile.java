@@ -51,11 +51,7 @@ public class Profile {
 
     @Override
     public String toString() {
-        return "Profile{" + "name=" + name + ", resource=" + resource + '}';
+        return name;
     }
-    
-    
-
-   
 
 }

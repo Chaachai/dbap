@@ -14,20 +14,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="600.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.LoginFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="600.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.Login2FXMLController">
    <children>
       <ImageView fitHeight="622.0" fitWidth="330.0" pickOnBounds="true">
          <image>
             <Image url="@images/red_bg.jpg" />
          </image>
       </ImageView>
-      <Pane fx:id="pane" layoutX="62.0" layoutY="119.0" opacity="0.75" prefHeight="87.0" prefWidth="208.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" />
-      <TextField fx:id="login" layoutX="71.0" layoutY="229.0" prefHeight="35.0" prefWidth="189.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;">
+      <Pane fx:id="pane" layoutX="62.0" layoutY="101.0" opacity="0.75" prefHeight="105.0" prefWidth="208.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15;" />
+      <TextField fx:id="login" layoutX="72.0" layoutY="347.0" prefHeight="35.0" prefWidth="189.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;">
          <padding>
             <Insets left="33.0" />
          </padding>
       </TextField>
-      <PasswordField fx:id="password" layoutX="71.0" layoutY="269.0" prefHeight="35.0" prefWidth="189.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;">
+      <PasswordField fx:id="password" layoutX="72.0" layoutY="387.0" prefHeight="35.0" prefWidth="189.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;">
          <padding>
             <Insets left="33.0" />
          </padding>
@@ -37,7 +37,7 @@
             <Image url="@images/logoOrcl.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" defaultButton="true" layoutX="71.0" layoutY="313.0" mnemonicParsing="false" onAction="#connect" prefHeight="35.0" prefWidth="189.0" style="-fx-background-color: #e60000; -fx-border-color: #e60000; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1;" text="CONNECT" textFill="WHITE">
+      <Button fx:id="loginButton" defaultButton="true" layoutX="72.0" layoutY="431.0" mnemonicParsing="false" onAction="#connect" prefHeight="35.0" prefWidth="189.0" style="-fx-background-color: #e60000; -fx-border-color: #e60000; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1;" text="CONNECT" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -62,24 +62,16 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="83.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="84.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/users_icon_red.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="83.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="84.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/password_icon_red.png" />
          </image>
       </ImageView>
-      <Button layoutX="71.0" layoutY="401.0" mnemonicParsing="false" onAction="#toLogin2" prefHeight="35.0" prefWidth="189.0" style="-fx-background-color: white; -fx-border-color: #e60000; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1;" text="CHANGE PARAMETERS" textAlignment="CENTER" textFill="#e60000">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
       <Text layoutX="26.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
          <font>
             <Font size="10.0" />
@@ -95,9 +87,11 @@
             <Image url="@images/Logo_WHITE.png" />
          </image>
       </ImageView>
-      <Line endX="-24.0" layoutX="173.0" layoutY="376.0" startX="-100.0" stroke="RED" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.5" />
-      <Label layoutX="157.0" layoutY="368.0" text="OR" />
-      <Line endX="-24.0" layoutX="281.0" layoutY="376.0" startX="-98.0" stroke="RED" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.5" />
-      <Text fx:id="errorMessage" fill="RED" layoutX="65.0" layoutY="143.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="java.sql.SQLException: ORA-01045: user CHAACHAI lacks CREATE SESSION privilege; logon denied " textAlignment="CENTER" wrappingWidth="200.0" />
+      <Text fx:id="errorMessage" fill="RED" layoutX="65.0" layoutY="124.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="java.sql.SQLException: Listener refused the connection with the following error:ORA-12505, TNS:listener does not currently know of SID given in connect descriptor" textAlignment="CENTER" wrappingWidth="200.0" />
+      <TextField fx:id="port" layoutX="72.0" layoutY="282.0" prefHeight="35.0" prefWidth="189.0" promptText="Port number" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" text="1521" />
+      <TextField fx:id="dbname" layoutX="72.0" layoutY="227.0" prefHeight="35.0" prefWidth="189.0" promptText="Database name" style="-fx-background-color: white; -fx-border-color: #e00e0e; -fx-background-radius: 15; -fx-border-radius: 15;" text="DBAP" />
+      <Label layoutX="85.0" layoutY="211.0" text="Database name (SID) :" />
+      <Label layoutX="85.0" layoutY="266.0" text="Port number :" />
+      <Line endX="69.0" layoutX="187.0" layoutY="332.0" startX="-111.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.5" />
    </children>
 </AnchorPane>

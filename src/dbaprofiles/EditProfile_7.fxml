@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController7">
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.EditProfileController7">
     <children>
         <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="90.0" opacity="0.45" pickOnBounds="true">
             <image>
@@ -54,7 +54,7 @@
                 <Point3D y="90.0" z="1.0" />
             </rotationAxis>
         </ImageView>
-        <Label layoutX="219.0" layoutY="520.0" text="Create" textFill="WHITE">
+        <Label layoutX="219.0" layoutY="520.0" text="Update" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -64,7 +64,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="93.0" layoutY="112.0" text="Create a Profile" textFill="#cd2020">
+        <Label layoutX="115.0" layoutY="116.0" text="Edit Profile" textFill="#cd2020">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>

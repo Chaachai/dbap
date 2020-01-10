@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import service.ProfileFacade;
+import service.UserFacade;
 import util.Session;
 
 /**
@@ -67,14 +68,19 @@ public class ProfilesController implements Initializable {
 
     @FXML
     private Label close;
+    @FXML
+    private Label username;
 
     @FXML
     private TextField hiddenField;
+    @FXML
+    private TextField search;
 
     @FXML
     private TableView profileTable = new TableView();
 
     ProfileFacade profileFacade = new ProfileFacade();
+    UserFacade userFacade = new UserFacade();
     private ProfileFXHelper profileFXHelper;
 
     private void initHelper() {
@@ -85,8 +91,22 @@ public class ProfilesController implements Initializable {
     }
 
     @FXML
+    private void toEditProfile(ActionEvent actionEvent) throws IOException {
+        if (hiddenField.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Select a profile to edit !", "No profile was selected", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            DBAProfiles.forward(actionEvent, "EditProfile_1.fxml", this.getClass());
+        }
+    }
+
+    @FXML
+    private void toUsers(ActionEvent actionEvent) throws IOException {
+        DBAProfiles.forward(actionEvent, "Users.fxml", this.getClass());
+    }
+
+    @FXML
     private void toCreateProfile(ActionEvent actionEvent) throws IOException {
-        DBAProfiles.forward(actionEvent, "CreateProfile.fxml", this.getClass());
+        DBAProfiles.forward(actionEvent, "CreateProfile_1.fxml", this.getClass());
     }
 
     @FXML
@@ -164,6 +184,11 @@ public class ProfilesController implements Initializable {
         DBAProfiles.forward(actionEvent, "LoginFXML.fxml", this.getClass());
     }
 
+    @FXML
+    private void filterProfiles() {
+        profileFXHelper.setList(profileFacade.findProfiles(search.getText().toUpperCase()));
+    }
+
     public void clear() {
         hiddenField.setText("");
         COMPOSITE_LIMIT.setText("---");
@@ -192,6 +217,7 @@ public class ProfilesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         initHelper();
+        username.setText(userFacade.getUsername());
     }
 
 }

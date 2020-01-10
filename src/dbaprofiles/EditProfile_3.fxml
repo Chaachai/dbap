@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.CreateProfileController7">
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="330.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbaprofiles.EditProfileController3">
     <children>
         <ImageView fitHeight="74.0" fitWidth="292.0" layoutX="19.0" layoutY="90.0" opacity="0.45" pickOnBounds="true">
             <image>
@@ -36,17 +36,17 @@
                 <Image url="@images/logoOrcl_white.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="36.0" fitWidth="61.0" layoutX="262.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="36.0" fitWidth="64.0" layoutX="262.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/Logo_WHITE.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="194.0" layoutY="518.0" pickOnBounds="true">
+        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="194.0" layoutY="525.0" pickOnBounds="true">
             <image>
                 <Image url="@images/btn_bg.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="14.0" layoutY="518.0" pickOnBounds="true" rotate="180.0">
+        <ImageView fitHeight="33.0" fitWidth="122.0" layoutX="14.0" layoutY="525.0" pickOnBounds="true" rotate="180.0">
             <image>
                 <Image url="@images/btn_bg.png" />
             </image>
@@ -54,17 +54,17 @@
                 <Point3D y="90.0" z="1.0" />
             </rotationAxis>
         </ImageView>
-        <Label layoutX="219.0" layoutY="520.0" text="Create" textFill="WHITE">
+        <Label layoutX="225.0" layoutY="527.0" text="Next" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="40.0" layoutY="520.0" text="Previous" textFill="WHITE">
+        <Label layoutX="40.0" layoutY="527.0" text="Previous" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="93.0" layoutY="112.0" text="Create a Profile" textFill="#cd2020">
+        <Label layoutX="117.0" layoutY="114.0" text="Edit Profile" textFill="#cd2020">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -87,52 +87,68 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="194.0" layoutY="519.0" mnemonicParsing="false" onAction="#createProfile" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+        <Button layoutX="194.0" layoutY="526.0" mnemonicParsing="false" onAction="#toNext" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" onAction="#toPrevious" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
+        <Button layoutX="14.0" layoutY="526.0" mnemonicParsing="false" onAction="#toPrevious" opacity="1.0E-4" prefHeight="30.0" prefWidth="122.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Label layoutX="21.0" layoutY="257.0" text="Number of failed attempts to lock after :">
+        <Label layoutX="19.0" layoutY="209.0" text="Concurrent Sessions (Per User) :">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="21.0" layoutY="314.0" text="Number of days to lock for :">
+        <Label layoutX="19.0" layoutY="268.0" text="Reads/Session (Blocks) :">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="19.0" layoutY="167.0" text="Password " textFill="#da1010">
+        <Label layoutX="19.0" layoutY="328.0" text="Reads/Call (Blocks) :">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="18.0" layoutY="384.0" text="Private SGA (KBytes) :">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="19.0" layoutY="167.0" text="Database Services" textFill="#da1010">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
         <Line endX="191.33334350585938" layoutX="119.0" layoutY="195.0" startX="-100.0" stroke="#aeaeae" strokeWidth="0.5" />
-        <TextField fx:id="FAILED_LOGIN_ATTEMPTS_field" layoutX="19.0" layoutY="277.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of failed attempts to lock after" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="FAILED_LOGIN_ATTEMPTS" layoutX="203.0" layoutY="277.0" onAction="#FAILED_LOGIN_ATTEMPTS_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <TextField fx:id="PASSWORD_LOCK_TIME_field" layoutX="19.0" layoutY="334.0" prefHeight="30.0" prefWidth="178.0" promptText="Number of days to lock for" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
-        <ComboBox fx:id="PASSWORD_LOCK_TIME" layoutX="203.0" layoutY="334.0" onAction="#PASSWORD_LOCK_TIME_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
-        <Label layoutX="107.0" layoutY="171.0" text="(Failed Login)" textFill="#da1010">
+        <TextField fx:id="SESSIONS_PER_USER_field" layoutX="21.0" layoutY="229.0" prefHeight="30.0" prefWidth="178.0" promptText="Concurrent Sessions (Per User)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="SESSIONS_PER_USER" layoutX="211.0" layoutY="229.0" onAction="#SESSIONS_PER_USER_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <TextField fx:id="LOGICAL_READS_PER_SESSION_field" layoutX="21.0" layoutY="288.0" prefHeight="30.0" prefWidth="178.0" promptText="Reads/Session (Blocks)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="LOGICAL_READS_PER_SESSION" layoutX="211.0" layoutY="288.0" onAction="#LOGICAL_READS_PER_SESSION_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <TextField fx:id="LOGICAL_READS_PER_CALL_field" layoutX="21.0" layoutY="348.0" prefHeight="30.0" prefWidth="178.0" promptText="Reads/Call (Blocks)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="LOGICAL_READS_PER_CALL" layoutX="211.0" layoutY="348.0" onAction="#LOGICAL_READS_PER_CALL_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <TextField fx:id="PRIVATE_SGA_field" layoutX="21.0" layoutY="404.0" prefHeight="30.0" prefWidth="178.0" promptText="Private SGA (KBytes)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="PRIVATE_SGA" layoutX="211.0" layoutY="404.0" onAction="#PRIVATE_SGA_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <Label layoutX="18.0" layoutY="443.0" text="Composite Limit (Service Units) :">
             <font>
-                <Font name="System Bold" size="14.0" />
+                <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="151.0" layoutY="502.0" text="7" textFill="RED">
+        <TextField fx:id="COMPOSITE_LIMIT_field" layoutX="21.0" layoutY="464.0" prefHeight="30.0" prefWidth="178.0" promptText="Composite Limit (Service Units)" style="-fx-border-color: #e00e0e; -fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: #ffffff;" text="DEFAULT" />
+        <ComboBox fx:id="COMPOSITE_LIMIT" layoutX="211.0" layoutY="464.0" onAction="#COMPOSITE_LIMIT_change" prefHeight="30.0" prefWidth="98.0" promptText="SELECT" stylesheets="@css/comboBoxStyle.css" />
+        <Label layoutX="149.0" layoutY="510.0" text="3" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="35.0" />
             </font>
         </Label>
-        <Label layoutX="162.0" layoutY="518.0" text="/" textFill="RED">
+        <Label layoutX="160.0" layoutY="526.0" text="/" textFill="RED">
             <font>
                 <Font name="Blackadder ITC" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="170.0" layoutY="534.0" text="7" textFill="RED">
+        <Label layoutX="168.0" layoutY="542.0" text="7" textFill="RED">
             <font>
                 <Font name="Brush Script MT Italic" size="18.0" />
             </font>
@@ -150,7 +166,7 @@
                 <Image url="@images/home_icon.png" />
             </image>
         </ImageView>
-        <Label fx:id="error" layoutX="99.0" layoutY="444.0" text="Please use valid values !" textFill="RED" visible="false" />
+        <Label fx:id="error" layoutX="102.0" layoutY="500.0" text="Please use valid values !" textFill="RED" visible="false" />
         <Text fill="WHITE" layoutX="115.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2020 IRISI UNITED. " textAlignment="CENTER">
             <font>
                 <Font size="10.0" />
@@ -160,6 +176,6 @@
             <font>
                 <Font size="10.0" />
             </font>
-        </Text> 
+        </Text>  
     </children>
 </AnchorPane>
