@@ -293,7 +293,7 @@
             <Insets left="20.0" />
          </padding>
       </Button>
-      <Button layoutX="724.0" layoutY="99.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Logout" textFill="WHITE">
+      <Button fx:id="logout" layoutX="724.0" layoutY="99.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #da1010; -fx-background-radius: 15; -fx-border-radius: 15;" text="Logout" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

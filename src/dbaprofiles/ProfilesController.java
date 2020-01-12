@@ -75,6 +75,8 @@ public class ProfilesController implements Initializable {
     private TextField hiddenField;
     @FXML
     private TextField search;
+    @FXML
+    private Button logout;
 
     @FXML
     private TableView profileTable = new TableView();
@@ -83,11 +85,19 @@ public class ProfilesController implements Initializable {
     UserFacade userFacade = new UserFacade();
     private ProfileFXHelper profileFXHelper;
 
+    @FXML
     private void initHelper() {
-        profileFXHelper = new ProfileFXHelper(profileTable, profileFacade.getAllProfiles());
-        profileTable.setStyle("-fx-selection-bar: #d60202; "
-                + "-fx-selection-bar-non-focused: salmon; "
-        );
+        if (profileFacade.getAllProfiles() != null) {
+            profileFXHelper = new ProfileFXHelper(profileTable, profileFacade.getAllProfiles());
+            profileTable.setStyle("-fx-selection-bar: #d60202; "
+                    + "-fx-selection-bar-non-focused: salmon; "
+            );
+        } else {
+           
+            System.out.println("You Do not have the permission ");
+
+        }
+
     }
 
     @FXML

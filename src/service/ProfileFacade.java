@@ -29,9 +29,12 @@ public class ProfileFacade {
     public List<Profile> getAllProfiles() {
         try {
             List<Profile> list = new ArrayList();
-
             ResultSet rs = c.loadData("select distinct profile from dba_profiles");
-
+            if (rs == null) {
+//                String error = "Sorry, it seems that you do not have the necessary privilege to use this application !";
+//                Session.updateAttribute(error, "errorPrivilege");
+                return null;
+            }
             while (rs.next()) {
                 Resource resource = rf.getRecourcesByProfile(rs.getString(1));
                 Profile profile = new Profile();
