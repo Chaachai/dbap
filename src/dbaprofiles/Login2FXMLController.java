@@ -70,7 +70,7 @@ public class Login2FXMLController implements Initializable {
                     DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
                 }else{
                     Session.clear();
-                    System.out.println("CLEARED THE FUCKING SESSION");
+                    System.out.println("CLEARED THE  SESSION");
                     return;
                 }
             } else {

@@ -5,9 +5,11 @@
  */
 package dbaprofiles;
 
+import bean.Profile;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import service.Config;
+import service.ProfileFacade;
 import util.Session;
 
 /**
@@ -47,6 +50,9 @@ public class LoginFXMLController implements Initializable {
     private Pane pane;
     @FXML
     private Text errorMessage;
+    
+    ProfileFacade profileFacade = new ProfileFacade();
+
 
     @FXML
     public void connect(ActionEvent actionEvent) throws IOException {
@@ -55,7 +61,15 @@ public class LoginFXMLController implements Initializable {
             if (con != null) {
                 Session.updateAttribute(login.getText(), "login");
                 Session.updateAttribute(password.getText(), "password");
-                DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
+                System.out.println("11111111111");
+                if (testPrivilege()) {
+                    System.out.println("222222222222");
+                    DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
+                }else{
+                    Session.clear();
+                    System.out.println("CLEARED THE FUCKING SESSION");
+                    return;
+                }
             } else {
                 String error = (String) Session.getAttribut("error");
                 errorMessage.setText(error);
@@ -67,6 +81,19 @@ public class LoginFXMLController implements Initializable {
             JOptionPane.showMessageDialog(null, "The username and the password are required  !", "login denied", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+    public boolean testPrivilege() {
+        List<Profile> list = profileFacade.getAllProfiles();
+        if (list == null) {
+            System.out.println("9awad !!");
+            errorMessage.setText("Sorry, it seems that you do not "
+                    + "have the necessary privilege to use this application !");
+            errorMessage.setVisible(true);
+            pane.setVisible(true);
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private boolean testChamps() {
