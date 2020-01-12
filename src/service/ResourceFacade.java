@@ -55,6 +55,7 @@ public class ResourceFacade {
             resource.setPassword_lock_time(limits.get(14));
             resource.setPassword_grace_time(limits.get(15));
 
+            rs.close();
             return resource;
         } catch (SQLException ex) {
             Logger.getLogger(ResourceFacade.class.getName()).log(Level.SEVERE, null, ex);

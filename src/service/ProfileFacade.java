@@ -33,6 +33,7 @@ public class ProfileFacade {
             if (rs == null) {
 //                String error = "Sorry, it seems that you do not have the necessary privilege to use this application !";
 //                Session.updateAttribute(error, "errorPrivilege");
+                rs.close();
                 return null;
             }
             while (rs.next()) {
@@ -42,6 +43,8 @@ public class ProfileFacade {
                 profile.setResource(resource);
                 list.add(profile);
             }
+
+            rs.close();
             return list;
         } catch (SQLException ex) {
             Logger.getLogger(ProfileFacade.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,6 +69,7 @@ public class ProfileFacade {
                 profile.setResource(resource);
                 list.add(profile);
             }
+            rs.close();
             return list;
         } catch (SQLException ex) {
             Logger.getLogger(ProfileFacade.class.getName()).log(Level.SEVERE, null, ex);

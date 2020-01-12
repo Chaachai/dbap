@@ -64,13 +64,10 @@ public class Login2FXMLController implements Initializable {
             if (con != null) {
                 Session.updateAttribute(login.getText(), "login");
                 Session.updateAttribute(password.getText(), "password");
-                System.out.println("11111111111");
                 if (testPrivilege()) {
-                    System.out.println("222222222222");
                     DBAProfiles.forward(actionEvent, "Profiles.fxml", this.getClass());
                 }else{
                     Session.clear();
-                    System.out.println("CLEARED THE  SESSION");
                     return;
                 }
             } else {
@@ -89,7 +86,6 @@ public class Login2FXMLController implements Initializable {
     public boolean testPrivilege() {
         List<Profile> list = profileFacade.getAllProfiles();
         if (list == null) {
-            System.out.println("9awad !!");
             errorMessage.setText("Sorry, it seems that you do not "
                     + "have the necessary privilege to use this application !");
             errorMessage.setVisible(true);

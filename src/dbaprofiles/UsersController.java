@@ -87,14 +87,7 @@ public class UsersController implements Initializable {
 
     @FXML
     private void filterUsers() {
-        try {
-//            System.out.println(search.getText().toUpperCase());
-            usersFXHelper.setList(userFacade.findUsers(search.getText().toUpperCase()));
-            Thread.sleep(200);
-//        usersFXHelper.setList(userFacade.findUsers(search.getText().toUpperCase()));
-        } catch (InterruptedException ex) {
-            Logger.getLogger(UsersController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        usersFXHelper.setList(userFacade.findUsers(search.getText().toUpperCase()));
     }
 
     @FXML
@@ -127,10 +120,6 @@ public class UsersController implements Initializable {
         stage.setIconified(true);
     }
 
-    @FXML
-    private void save(ActionEvent actionEvent) throws IOException {
-
-    }
 
     @FXML
     private void toHome(ActionEvent actionEvent) throws IOException {

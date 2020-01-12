@@ -31,9 +31,14 @@ public class UserFacade {
         try {
             String username = "";
             ResultSet rs = c.loadData("SELECT USER FROM DUAL");
+            if(rs == null){
+                rs.close();
+                return "SYSTEM";
+            }
             while (rs.next()) {
                 username = rs.getString(1);
             }
+            rs.close();
             return username;
         } catch (SQLException ex) {
             Logger.getLogger(UserFacade.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,6 +60,7 @@ public class UserFacade {
                 user.setProfile(profile);
                 list.add(user);
             }
+            rs.close();
             return list;
         } catch (SQLException ex) {
             Logger.getLogger(ProfileFacade.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,6 +86,7 @@ public class UserFacade {
                 user.setProfile(profile);
                 list.add(user);
             }
+            rs.close();
             return list;
         } catch (SQLException ex) {
             Logger.getLogger(ProfileFacade.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,8 +106,10 @@ public class UserFacade {
                 val = rs.getString(1);
             }
             if (val.equalsIgnoreCase("true")) {
+                rs.close();
                 return true;
             } else {
+                rs.close();
                 return false;
             }
 
